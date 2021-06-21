@@ -1,4 +1,4 @@
-# buy_tickets_workflow
+Java, Maven, TestNG, Selenium WebDriver, Cucumber
 
 Workflow:
 1. Navigate to https://cp.pt
