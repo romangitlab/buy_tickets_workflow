@@ -6,7 +6,7 @@ import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.LoadableComponent;
 import com.setup.DriverFactory;
 import com.setup.EnvProperties;
-import com.setup.WebElementHelper;
+import com.helpers.WebElementHelper;
 import static org.openqa.selenium.remote.ErrorCodes.TIMEOUT;
 
 public abstract class BasePage<T extends LoadableComponent<T>> extends LoadableComponent<T>  {

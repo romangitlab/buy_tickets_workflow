@@ -3,7 +3,7 @@ package com.webComponents;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import com.setup.DriverFactory;
-import com.setup.WebElementHelper;
+import com.helpers.WebElementHelper;
 
 import java.util.List;
 
