@@ -1,4 +1,8 @@
-Java, Maven, TestNG, Selenium WebDriver, Cucumber
+### Tools:
+`Java, Maven, TestNG, Selenium WebDriver, Cucumber`
+
+### To run tests:
+`mvn clean test -Dbrowser=chrome`
 
 Workflow:
 1. Navigate to https://cp.pt
@@ -7,4 +11,5 @@ Workflow:
 4. Select Cancel on the login page. Main home page should appear.
 5. Validate that all search options are correctly saved (From: Lagos. To: Porto - Campanha. Correct selected date. Correct class and the number of passengers)
 
-Run tests - mvn test
+### To run tests:
+`mvn clean test -Dbrowser=chrome`
