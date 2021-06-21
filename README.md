@@ -2,7 +2,7 @@
 `Java, Maven, TestNG, Selenium WebDriver, Cucumber`
 
 ### To run tests:
-`mvn clean test -Dbrowser=chrome`
+`mvn clean test`
 
 Workflow:
 1. Navigate to https://cp.pt
