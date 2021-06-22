@@ -1,5 +1,5 @@
 ### Tools:
-`Java, Maven, TestNG, Selenium WebDriver, Cucumber`
+`Cucumber, Java, Maven, TestNG, Selenium WebDriver`
 
 ### To run tests:
 `mvn clean test`
