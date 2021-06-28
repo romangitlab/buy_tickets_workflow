@@ -35,6 +35,9 @@ public class BuyTicketsPage extends BasePage<BuyTicketsPage> {
     @FindBy(how = How.CSS, using = "div.picker--focused .picker__day--infocus:not(.picker__day--disabled):not(.picker__day--selected)")
     public List<WebElement> futureDates;
 
+    @FindBy(how = How.CSS, using = ".picker__day--outfocus:not(.picker__day--disabled)")
+    public List<WebElement> futureDatesOutfocus;
+
     @FindBy(how = How.CSS, using = "div.picker--focused .picker__day--today")
     public WebElement todayDate;
 

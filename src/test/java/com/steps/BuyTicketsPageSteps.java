@@ -1,9 +1,13 @@
 package com.steps;
 
 import io.cucumber.java.en.And;
+import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import com.pages.BuyTicketsPage;
 import com.webComponents.DatePicker;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import static com.context.Context.*;
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -44,34 +48,32 @@ public class BuyTicketsPageSteps {
 
     @And("I choose to start the trip Lagos > Porto-Campanha in {int} days")
     public void iChooseToStartTheTripLagosPortoCampanhaInDays(int days) throws InterruptedException {
+        List<WebElement> futureDates = new ArrayList<>();
 
         buyTicketsPage.getWebElementHelper().clickAt(buyTicketsPage.departDate);
-        datePicker.selectFutureDate(buyTicketsPage.futureDates, days);
+        futureDates.addAll(buyTicketsPage.futureDates);
+        futureDates.addAll(buyTicketsPage.futureDatesOutfocus);
+        datePicker.selectFutureDate(futureDates, days);
         buyTicketsPage.getWebElementHelper().clickAt(buyTicketsPage.departDate);
 
-        Integer todayDate = datePicker.getCurrentDay(buyTicketsPage.todayDate);
         Integer selectedDate = datePicker.getSelectedDay(buyTicketsPage.selectedDate);
 
-        put("start_todayDate", todayDate);
         put("start_selectedDate", selectedDate);
-
-        Assert.assertEquals(selectedDate - todayDate, days);
     }
 
     @And("I choose to return in {int} days from Porto-Campanha > Lagos after the start of the trip")
     public void iChooseToReturnInDaysFromPortoCampanhaLagosAfterTheStartOfTheTrip(int days) throws InterruptedException {
+        List<WebElement> returnDates = new ArrayList<>();
 
         buyTicketsPage.getWebElementHelper().clickAt(buyTicketsPage.returnDate);
-        datePicker.selectFutureDate(buyTicketsPage.futureDates, days+3);
+        returnDates.addAll(buyTicketsPage.futureDates);
+        returnDates.addAll(buyTicketsPage.futureDatesOutfocus);
+        datePicker.selectFutureDate(returnDates, days+3);
         buyTicketsPage.getWebElementHelper().clickAt(buyTicketsPage.returnDate);
 
-        Integer todayDate = datePicker.getCurrentDay(buyTicketsPage.todayDate);
         Integer selectedDate = datePicker.getSelectedDay(buyTicketsPage.selectedDate);
 
-        put("end_todayDate", todayDate);
         put("end_selectedDate", selectedDate);
-
-        Assert.assertEquals(selectedDate - todayDate, days+3);
     }
 
     @And("I choose comfort class for passengers")
